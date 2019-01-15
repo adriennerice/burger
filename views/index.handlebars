@@ -1,0 +1,87 @@
+
+
+{{!-- <div class="container">
+  <div class="row">
+    <div class="col-12 text-center" class="top-bar">
+      <h1>Eat Burger!</h1>
+    </div>
+    <div class="col-12 text-center" class="task">
+        <h3>Want to Eat</h3>
+        <div class="row">
+            {{#each burger_data}}
+              {{#unless devoured}}
+                {{> burgers/burger-block devoured=false}}
+              {{/unless}}
+            {{/each}}
+        </div>
+    </div>
+
+     <div class="col-12 text-center" class="task">
+        <h3>Devoured</h3>
+        <div class="row">
+            {{#each burger_data}}
+              {{#unless devoured}}
+                {{> burgers/burger-block devoured=true}}
+              {{/unless}}
+            {{/each}}
+        </div>
+    </div> --}}
+
+{{!-- 
+            <div class="col-9 text-center">
+              <pre>{{this.id}}. {{this.burger}}</pre>
+            </div>
+          <div class="col-3 text-center">
+            <form method="POST" action="/burgers/update?_method=PUT" class="button_size">
+              <input type="hidden" name="burger_id" type="text" value={{this.id}}>
+              <br>
+              <button type="submit" class="btn btn-default">Devour It</button>
+            </form>
+          </div>
+            {{/unless}}
+            {{/each}}
+        </div>
+      </div>
+  </div>
+</div> --}}
+
+<h1>Burgers!</h1>
+
+<h2>Want to Eat</h2>
+
+<ul>
+  {{#each burger}}
+    {{#unless devoured}}
+      <ul>
+        <li>
+        {{id}}: {{burger}} 
+        <button class="change-devoured" data-id="{{id}}" data-devoured="0">Devoured</button>
+        </li>
+      </ul>
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Devoured</h2>
+
+<ul>
+  {{#each burger}}
+    {{#if devoured}}
+    <ul>
+      <li>{{id}}: {{burger}}</li>
+    </ul>
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a Burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="burger">Burger Name:</label>
+    <input type="text" id="burger" name="name">
+    {{!-- ADD FORM VALIDATION - REQUIRED FIELD --}}
+  </div>
+
+  <button type="submit">Add Burger</button>
+</form> 
