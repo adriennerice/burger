@@ -1,3 +1,15 @@
-ul { 
-        list-style-type: none;
-      }
+/* img {
+  height: 20px;
+  width: 20px;
+} */
+
+ul {
+  list-style: none;
+  font-size: 23px
+}
+li { 
+  padding: 5px;
+ }
+
+ 
+      
